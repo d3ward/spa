@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPA - Check</title>
+  <link rel="icon" href="./src/img/spa_icon.png" type="image/png" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/d3ss.min.css">
+  <link rel="stylesheet" href="src/css/style.css">
+
+</head>
+
+<body>
+
+  <div id="trapez"></div>
+
+  <section id="main-box">
+
+    <!-- https://codepen.io/clovisneto/pen/bwZoqb -->
+    <h2 class="brasil" data-text="Security">Security</h2>
+    <h2 class="brasil" data-text="Privacy">Privacy</h2>
+    <h2 class="brasil" data-text="Anonymity">Anonymity</h2>
+    <p class="game-rules-copy">Check your score about security, privacy and anonymity with this simple checklist!</p>
+    <button class="play-button" id="quiz-game-btn"> Start <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+  </section>
+  
+
+  <section id="checks-box">
+    <div style="text-align:center;" id="steps"><span class="step active"></span><span class="step"></span></div>
+    <div id="zone_1">
+      <h1> Zone 1 <h4>Basic</h4>
+      </h1>
+      <div class="tab">
+        <div class="lb"><label for="ans0"><input type="checkbox" value="5" id="ans0" class="ans"> Use a password
+            manager</label></div>
+        <div class="lb"><label for="ans1"><input type="checkbox" value="5" id="ans1" class="ans"> Use strong device
+            password</label></div>
+        <div class="lb"><label for="ans2"><input type="checkbox" value="5" id="ans2" class="ans"> Use a strong router
+            password</label></div>
+        <div class="lb"><label for="ans3"><input type="checkbox" value="5" id="ans3" class="ans"> Use 2FA on
+            available service</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans4"><input type="checkbox" value="5" id="ans4" class="ans"> Disable Google
+            tracking</label></div>
+        <div class="lb"><label for="ans5"><input type="checkbox" value="5" id="ans5" class="ans"> Remove unused
+            accounts</label></div>
+        <div class="lb"><label for="ans6"><input type="checkbox" value="5" id="ans6" class="ans"> Utilize video social
+            media rules</label></div>
+        <div class="lb"><label for="ans7"><input type="checkbox" value="5" id="ans7" class="ans"> Use a good VPN</label>
+        </div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans8"><input type="checkbox" value="5" id="ans8" class="ans"> Use encrypted
+            messaging</label></div>
+        <div class="lb"><label for="ans9"><input type="checkbox" value="5" id="ans9" class="ans"> Use encrypted
+            email</label></div>
+        <div class="lb"><label for="ans10"><input type="checkbox" value="5" id="ans10" class="ans"> Use trusted web
+            extensions</label></div>
+        <div class="lb"><label for="ans11"><input type="checkbox" value="5" id="ans11" class="ans"> Use a privacy search
+            engine</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans12"><input type="checkbox" value="5" id="ans12" class="ans"> Frequently clear
+            browser data</label></div>
+        <div class="lb"><label for="ans13"><input type="checkbox" value="5" id="ans13" class="ans"> Utilize browser
+            protections</label></div>
+        <div class="lb"><label for="ans14"><input type="checkbox" value="5" id="ans14" class="ans"> Opt out of phone
+            tracking</label></div>
+        <div class="lb"><label for="ans15"><input type="checkbox" value="5" id="ans15" class="ans"> Disable unused phone
+            radios</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans16"><input type="checkbox" value="5" id="ans16" class="ans"> Disable unused phone
+            features</label></div>
+        <div class="lb"><label for="ans17"><input type="checkbox" value="5" id="ans17" class="ans"> Opt out of computer
+            tracking</label></div>
+        <div class="lb"><label for="ans18"><input type="checkbox" value="5" id="ans18" class="ans"> Disable unused
+            computer radios</label></div>
+        <div class="lb"><label for="ans19"><input type="checkbox" value="5" id="ans19" class="ans"> Disable unused
+            computer features</label></div>
+        <div class="lb"><label for="ans20"><input type="checkbox" value="5" id="ans20" class="ans"> Clear device
+            temporary data</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans21"><input type="checkbox" value="5" id="ans21" class="ans"> Sherd files &amp;
+            data</label></div>
+        <div class="lb"><label for="ans22"><input type="checkbox" value="5" id="ans22" class="ans"> Backup your
+            data</label></div>
+        <div class="lb"><label for="ans23"><input type="checkbox" value="5" id="ans23" class="ans"> Avoid public
+            computers</label></div>
+        <div class="lb"><label for="ans24"><input type="checkbox" value="5" id="ans24" class="ans"> Avoid IOT &amp;
+            Smart Devices</label></div>
+        <div class="lb"><label for="ans25"><input type="checkbox" value="5" id="ans25" class="ans"> Utilize a safe &amp;
+            shredder</label></div>
+      </div>
+    </div>
+    <div id="zone_2">
+      <h1> Zone 2 <h4>Moderate</h4>
+      </h1>
+      <div class="tab">
+        <div class="lb"><label for="ans26"><input type="checkbox" value="6" id="ans26" class="ans"> Disable all
+            biometrics</label></div>
+        <div class="lb"><label for="ans27"><input type="checkbox" value="6" id="ans27" class="ans"> Delete Google
+            altogether</label></div>
+        <div class="lb"><label for="ans28"><input type="checkbox" value="6" id="ans28" class="ans"> Utilize
+            pseudonyms</label></div>
+        <div class="lb"><label for="ans29"><input type="checkbox" value="6" id="ans29" class="ans"> Use private phone
+            numbers</label></div>
+        <div class="lb"><label for="ans30"><input type="checkbox" value="6" id="ans30" class="ans"> Delete personal
+            social media</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans31"><input type="checkbox" value="6" id="ans31" class="ans"> Use video
+            private/secure browsers</label></div>
+        <div class="lb"><label for="ans32"><input type="checkbox" value="6" id="ans32" class="ans"> Utilize multiple
+            browsers</label></div>
+        <div class="lb"><label for="ans33"><input type="checkbox" value="6" id="ans33" class="ans"> Move to FOSS</label>
+        </div>
+        <div class="lb"><label for="ans34"><input type="checkbox" value="6" id="ans34" class="ans"> Ditch type 1
+            Android</label></div>
+        <div class="lb"><label for="ans35"><input type="checkbox" value="6" id="ans35" class="ans"> Protect computer
+            BIOS</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans36"><input type="checkbox" value="6" id="ans36" class="ans"> Use full disk
+            encryption</label></div>
+        <div class="lb"><label for="ans37"><input type="checkbox" value="6" id="ans37" class="ans"> Spoof MAC
+            address</label></div>
+        <div class="lb"><label for="ans38"><input type="checkbox" value="6" id="ans38" class="ans"> Strip OS
+            telemetry/functionality</label></div>
+        <div class="lb"><label for="ans39"><input type="checkbox" value="6" id="ans39" class="ans"> Ditch
+            Windows</label></div>
+        <div class="lb"><label for="ans40"><input type="checkbox" value="6" id="ans40" class="ans"> Delete file metadata
+            &amp; EXIF</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans41"><input type="checkbox" value="6" id="ans41" class="ans"> Implement home
+            security</label></div>
+        <div class="lb"><label for="ans42"><input type="checkbox" value="6" id="ans42" class="ans"> Use cable locks
+            &amp; intrusion kits</label></div>
+        <div class="lb"><label for="ans43"><input type="checkbox" value="6" id="ans43" class="ans"> Ditch IOT &amp;
+            smart devices</label></div>
+        <div class="lb"><label for="ans44"><input type="checkbox" value="6" id="ans44" class="ans"> Use privacy screen
+            protectors</label></div>
+        <div class="lb"><label for="ans45"><input type="checkbox" value="6" id="ans45" class="ans"> Use camera
+            covers</label></div>
+      </div>
+    </div>
+    <div id="zone_3">
+      <h1> Zone 3 <h4>Advanced</h4>
+      </h1>
+      <div class="tab">
+        <div class="lb"><label for="ans46"><input type="checkbox" value="7" id="ans46" class="ans"> Clean your digital
+            footprint</label></div>
+        <div class="lb"><label for="ans47"><input type="checkbox" value="7" id="ans47" class="ans"> Delete social
+            media</label></div>
+        <div class="lb"><label for="ans48"><input type="checkbox" value="7" id="ans48" class="ans"> Utilize hardened
+            browsers</label></div>
+        <div class="lb"><label for="ans49"><input type="checkbox" value="7" id="ans49" class="ans"> Use Custom ROMs/Dumb
+            Phones</label></div>
+      </div>
+      <div class="tab">
+        <div class="lb"><label for="ans50"><input type="checkbox" value="7" id="ans50" class="ans"> Use Private/Secure
+            Desktop OS(s)</label></div>
+        <div class="lb"><label for="ans51"><input type="checkbox" value="7" id="ans51" class="ans"> Shop
+            privately</label></div>
+        <div class="lb"><label for="ans52"><input type="checkbox" value="7" id="ans52" class="ans"> Physically remove
+            cameras/mics</label></div>
+        <div class="lb"><label for="ans53"><input type="checkbox" value="7" id="ans53" class="ans"> Avoid facial
+            recognition/AI</label></div>
+      </div>
+    </div>
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i class="fas fa-angle-left"></i> Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      </div>
+    </div>
+  </section>
+  <section id="result-box">
+    <div class="row keep-width _al-centered">
+      <div>
+        <h3>Zone 1</h3>
+        <div class="progressG"></div>
+      </div>
+      <div>
+        <h3>Zone 2</h3>
+        <div class="progressY"></div>
+      </div>
+      <div>
+        <h3>Zone 3</h3>
+        <div class="progressR"></div>
+      </div>
+    </div>
+
+    <div class="progressB"></div>
+    <div class="results _al-centered">
+      <h2 id="rs1"> Weak </h2>
+      <h2 id="rs2"> Below Average </h2>
+      <h2 id="rs3"> Techlore Approved </h2>
+      <h2 id="rs4"> Above & Beyond </h2>
+      <h2 id="rs5"> Techlore Max </h2>
+    </div>
+    <div id="resultMessage">
+    </div>
+  </section>
+<section id="credits">
+    <a class="btn" href="https://github.com/techlore-official/channel-content/blob/master/Resources/BA2020PDF.pdf" > Official Resource by Techlore</a>
+    <a class="btn" href="https://techlore.tech/"> Techlore</a>
+    <a class="btn" href="https://youtu.be/a1i-3xwcSGA"> Become Anonymous by Techlore</a>
+  </section>
+  <footer class="_al-centered">
+    Made with &hearts; by <a href="https://github.com/d3ward">d3ward</a> &middot; <a href="https://github.com/d3ward/spa" class="gitbtn"><i class="fab fa-github"></i></a> 
+  </footer>
+</body>
+<script src="src/js/circle-progress.min.js"></script>
+<script src="src/js/svelte.min.js"></script>
+<script src="src/js/script.js"></script>
+
+</html>

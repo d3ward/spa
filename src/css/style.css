@@ -1,0 +1,215 @@
+:root{
+  --c1 : #0074d9;
+  --c2 : #414141;
+}
+
+h2,h1{
+  margin: 0;
+}
+
+div.lb {
+  margin: 15px 0;
+  background: ghostwhite;
+  border-radius: .3rem;
+}
+#zone_1 div.lb {
+  border: .1rem solid #22bf73;
+}
+button{
+  border: .1rem solid var(--c1);
+  color: var(--c1);
+}
+button:not([disabled]):hover {
+  color: #fcfcfc;
+  background: var(--c1);
+}
+#zone_2 div.lb {
+  border: .1rem solid #ffcd38;
+}
+#zone_3 div.lb{
+  border: .1rem  solid #ff3838;
+}
+label {
+  margin-left: 25px;
+  display: block;
+  padding: 10px;
+}
+
+input[type=checkbox]:checked,
+input[type=radio]:checked {
+  background: var(--c1);
+  border-color: var(--c1);
+}
+
+#checks-box h4{
+  margin-top:0;
+}
+
+.tab,#zone_2,#zone_3,#result-box,#checks-box{
+  display: none;
+}
+.step {
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #fff;
+  border: 2px solid;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.step.active {
+  border-color: var(--c1);
+  background-color: var(--c1);
+}
+
+.brasil {
+  font-family: arial;
+  text-align: center;
+  position: relative;
+  color: #000;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.brasil::before,
+.brasil::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.brasil::before {
+  left: 2px;
+    clip: rect(79px, 1200px, 86px, 0);
+  text-shadow: -1px 0 red;
+  background: #fff;
+  animation: brasil-anim-2 1s infinite linear alternate-reverse;
+}
+
+.brasil::after {
+  /* variation */
+  left: -2px;
+  clip: rect(79px, 1200px, 86px, 0);
+  text-shadow: -1px 0 #0074d9;
+  background: #fff;
+  animation: brasil-anim-1 1s infinite linear alternate-reverse;
+   animation-delay: -1s;
+}
+
+@keyframes brasil-anim-1 {
+  0% {
+    clip: rect(20px, 1200px, 76px, 0);
+  }
+  20% {
+    clip: rect(19px, 1200px, 16px, 0);
+  }
+  40% {
+    clip: rect(16px, 1200px, 3px, 0);
+  }
+  60% {
+    clip: rect(62px, 1200px, 78px, 0);
+  }
+  80% {
+    clip: rect(25px, 1200px, 13px, 0);
+  }
+  100% {
+    clip: rect(53px, 1200px, 86px, 0);
+  }
+}
+
+@keyframes brasil-anim-2 {
+  0% {
+    clip: rect(79px, 1200px, 86px, 0);
+  }
+  
+  20% {
+    clip: rect(20px, 1200px, 30px, 0)
+  }
+  
+  40% {
+    clip: rect(25px, 1200px, 5px, 0)
+  }
+  
+  60% {
+    clip: rect(65px, 1200px, 85px, 0)
+  }
+  
+  80% {
+    clip: rect(120px, 1200px, 145px, 0)
+  }
+  
+  100% {
+    clip: rect(95px, 1200px, 75px, 0)
+  }
+}
+section+section{
+  margin-top: .5rem;
+}
+section
+{
+  position: relative;
+  background: #fff;
+  border-radius: .3rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+}
+.results h2 {
+  background: #0074d9;
+  color: #fefefe;
+  border-radius: .3rem;
+  margin: 10px 0;
+  display: none;
+}
+#trapez {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: -10;
+  transform: skewY(-8deg);
+  transform-origin: top left;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background: linear-gradient(#1126becc, #05c7adcc);
+  transition: ease-in all 3s;
+}
+.progressB{
+  text-align: center;
+}
+.progressY,.progressG,.progressR{
+  text-align: center;
+}
+.progressB .circle-progress {width: 200px; height: auto;}
+.progressB .circle-progress-value { stroke: #0074d9; }
+.progressG .circle-progress-value { stroke: #21bf73; }
+.progressY .circle-progress-value { stroke: #ffcd38; }
+.progressR .circle-progress-value { stroke: #ff3838; }
+.circle-progress-value {
+	stroke-width: 6px;
+	stroke-linecap: round;
+}
+.circle-progress-circle {
+  stroke-width: 2px;
+  stroke: #555;
+}
+.circle-progress-text{
+ fill: rgb(34, 34, 34);
+}
+.gitbtn{
+  color: #414452;
+  font-size: 1.3rem;
+}
+body{
+  padding-bottom: 2.5rem; 
+  position: relative;
+  min-height: 100vh;
+}
+footer{
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 .5rem;
+}
