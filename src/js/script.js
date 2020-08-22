@@ -1,7 +1,9 @@
+
 var zones = {
     "zSteps1": 6,
     "zSteps2": 4,
     "zSteps3": 2
+
 };
 const cProgressB = new CircleProgress(".progressB",{max: 306,value: 0,});
 const cProgressG = new CircleProgress(".progressG",{max: 130,value: 0,});
@@ -9,7 +11,9 @@ const cProgressY = new CircleProgress(".progressY",{max: 120,value: 0,});
 const cProgressR = new CircleProgress(".progressR",{max: 56,value: 0,});
 
 var activeZoneTabs = 1;
-var currentTab = 0; // Current tab is set to be the first tab (0)
+var currentTab = 0; 
+
+function wait(ms) {let start = new Date().getTime();let end = start;while (end < start + ms) {end = new Date().getTime();}}
 
 $("#quiz-game-btn").on("click", function () {
     $("#credits").hide();
@@ -30,9 +34,11 @@ function createSteps(n) {
     $('#steps').html(str);
 }
 
+
 function showTab(n) {
     var x = document.querySelectorAll("#zone_" + activeZoneTabs + ">.tab");
     x[n].style.display = "block";
+    //... and fix the Previous/Next buttons:
     if (n == 0) {
         document.getElementById("prevBtn").style.display = "none";
     } else {
@@ -51,8 +57,10 @@ function showTab(n) {
 
 function nextPrev(n) {
     var x = document.querySelectorAll("#zone_" + activeZoneTabs + ">.tab");
+
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
+
     if (currentTab >= x.length) {
         if (activeZoneTabs == 3){
             showResults();return;
@@ -61,6 +69,7 @@ function nextPrev(n) {
             $("#zone_" + activeZoneTabs).hide();
             activeZoneTabs += 1;
             $("#zone_" + activeZoneTabs).show();
+            
             currentTab = 0;
             createSteps(activeZoneTabs);
         }
@@ -77,7 +86,7 @@ function showResults(){
         $("#credits").fade("in");
         $("#trapez").css("background","linear-gradient(#1126becc, #05c7adcc)");
     });
-    wait(1000);
+    wait(2000);
     var totalP =0;
     var pGreen = 0;
     var pYellow = 0;
