@@ -2,10 +2,7 @@
   --c1 : #0074d9;
   --c2 : #414141;
 }
-
-h2,h1{
-  margin: 0;
-}
+h2,h1{ margin: 0;}
 
 div.lb {
   margin: 15px 0;
@@ -23,12 +20,8 @@ button:not([disabled]):hover {
   color: #fcfcfc;
   background: var(--c1);
 }
-#zone_2 div.lb {
-  border: .1rem solid #ffcd38;
-}
-#zone_3 div.lb{
-  border: .1rem  solid #ff3838;
-}
+#zone_2 div.lb { border: .1rem solid #ffcd38; }
+#zone_3 div.lb{ border: .1rem  solid #ff3838;}
 label {
   margin-left: 25px;
   display: block;
@@ -41,13 +34,9 @@ input[type=radio]:checked {
   border-color: var(--c1);
 }
 
-#checks-box h4{
-  margin-top:0;
-}
+#checks-box h4{ margin-top:0; }
 
-.tab,#zone_2,#zone_3,#result-box,#checks-box{
-  display: none;
-}
+.tab,#zone_2,#zone_3,#result-box,#checks-box{ display: none; }
 .step {
   height: 20px;
   width: 20px;
@@ -80,17 +69,14 @@ input[type=radio]:checked {
   width: 100%;
   height: 100%;
 }
-
 .brasil::before {
   left: 2px;
-    clip: rect(79px, 1200px, 86px, 0);
+  clip: rect(79px, 1200px, 86px, 0);
   text-shadow: -1px 0 red;
   background: #fff;
   animation: brasil-anim-2 1s infinite linear alternate-reverse;
 }
-
 .brasil::after {
-  /* variation */
   left: -2px;
   clip: rect(79px, 1200px, 86px, 0);
   text-shadow: -1px 0 #0074d9;
@@ -98,56 +84,23 @@ input[type=radio]:checked {
   animation: brasil-anim-1 1s infinite linear alternate-reverse;
    animation-delay: -1s;
 }
-
 @keyframes brasil-anim-1 {
-  0% {
-    clip: rect(20px, 1200px, 76px, 0);
-  }
-  20% {
-    clip: rect(19px, 1200px, 16px, 0);
-  }
-  40% {
-    clip: rect(16px, 1200px, 3px, 0);
-  }
-  60% {
-    clip: rect(62px, 1200px, 78px, 0);
-  }
-  80% {
-    clip: rect(25px, 1200px, 13px, 0);
-  }
-  100% {
-    clip: rect(53px, 1200px, 86px, 0);
-  }
+  0% {clip: rect(20px, 1200px, 76px, 0);}
+  20% {clip: rect(19px, 1200px, 16px, 0);}
+  40% {clip: rect(16px, 1200px, 3px, 0);}
+  60% {clip: rect(62px, 1200px, 78px, 0);}
+  80% {clip: rect(25px, 1200px, 13px, 0);}
+  100% {clip: rect(53px, 1200px, 86px, 0);}
 }
-
 @keyframes brasil-anim-2 {
-  0% {
-    clip: rect(79px, 1200px, 86px, 0);
-  }
-  
-  20% {
-    clip: rect(20px, 1200px, 30px, 0)
-  }
-  
-  40% {
-    clip: rect(25px, 1200px, 5px, 0)
-  }
-  
-  60% {
-    clip: rect(65px, 1200px, 85px, 0)
-  }
-  
-  80% {
-    clip: rect(120px, 1200px, 145px, 0)
-  }
-  
-  100% {
-    clip: rect(95px, 1200px, 75px, 0)
-  }
+  0% {clip: rect(79px, 1200px, 86px, 0);}
+  20% {clip: rect(20px, 1200px, 30px, 0)}
+  40% {clip: rect(25px, 1200px, 5px, 0)}
+  60% {clip: rect(65px, 1200px, 85px, 0)}
+  80% {clip: rect(120px, 1200px, 145px, 0)} 
+  100% {clip: rect(95px, 1200px, 75px, 0)}
 }
-section+section{
-  margin-top: .5rem;
-}
+section+section{margin-top: .5rem;}
 section
 {
   position: relative;
@@ -175,10 +128,7 @@ section
   background: linear-gradient(#1126becc, #05c7adcc);
   transition: ease-in all 3s;
 }
-.progressB{
-  text-align: center;
-}
-.progressY,.progressG,.progressR{
+.progressB,.progressY,.progressG,.progressR{
   text-align: center;
 }
 .progressB .circle-progress {width: 200px; height: auto;}
@@ -208,8 +158,8 @@ body{
 }
 footer{
   position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0 .5rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 .5rem;
 }

@@ -1,9 +1,7 @@
-//questions used in the quiz
 var zones = {
     "zSteps1": 6,
     "zSteps2": 4,
     "zSteps3": 2
-
 };
 const cProgressB = new CircleProgress(".progressB",{max: 306,value: 0,});
 const cProgressG = new CircleProgress(".progressG",{max: 130,value: 0,});
@@ -12,9 +10,6 @@ const cProgressR = new CircleProgress(".progressR",{max: 56,value: 0,});
 
 var activeZoneTabs = 1;
 var currentTab = 0; // Current tab is set to be the first tab (0)
-
-//Function to wait
-function wait(ms) {let start = new Date().getTime();let end = start;while (end < start + ms) {end = new Date().getTime();}}
 
 $("#quiz-game-btn").on("click", function () {
     $("#credits").hide();
@@ -35,12 +30,9 @@ function createSteps(n) {
     $('#steps').html(str);
 }
 
-
 function showTab(n) {
-    // This function will display the specified tab of the form...
     var x = document.querySelectorAll("#zone_" + activeZoneTabs + ">.tab");
     x[n].style.display = "block";
-    //... and fix the Previous/Next buttons:
     if (n == 0) {
         document.getElementById("prevBtn").style.display = "none";
     } else {
@@ -54,19 +46,13 @@ function showTab(n) {
     } else {
         document.getElementById("nextBtn").innerHTML = 'Next <i class="fas fa-angle-right"></i>';
     }
-    //... and run a function that will display the correct step indicator:
     activeStep(n);
 }
 
 function nextPrev(n) {
-    // This function will figure out which tab to display
     var x = document.querySelectorAll("#zone_" + activeZoneTabs + ">.tab");
-
-    // Hide the current tab:
     x[currentTab].style.display = "none";
-    // Increase or decrease the current tab by 1:
     currentTab = currentTab + n;
-
     if (currentTab >= x.length) {
         if (activeZoneTabs == 3){
             showResults();return;
@@ -75,7 +61,6 @@ function nextPrev(n) {
             $("#zone_" + activeZoneTabs).hide();
             activeZoneTabs += 1;
             $("#zone_" + activeZoneTabs).show();
-            
             currentTab = 0;
             createSteps(activeZoneTabs);
         }
@@ -84,7 +69,6 @@ function nextPrev(n) {
         if(activeZoneTabs == 3){document.body.style.setProperty("--c1", "#ff3838");$("#trapez").css("background","linear-gradient(#610909, #ff3838)");}
 
     }
-    // Otherwise, display the correct tab:
     showTab(currentTab);
 }
 function showResults(){
@@ -125,11 +109,9 @@ function showResults(){
 }
 
 function activeStep(n) {
-    // This function removes the "active" class of all steps...
     var i, x = document.getElementsByClassName("step");
     for (i = 0; i < x.length; i++) {
         x[i].className = x[i].className.replace(" active", "");
     }
-    //... and adds the "active" class on the current step:
     x[n].className += " active";
 }
