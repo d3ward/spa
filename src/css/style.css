@@ -110,10 +110,13 @@ section
 }
 .results h2 {
   background: #0074d9;
-  color: #fefefe;
-  border-radius: .3rem;
-  margin: 10px 0;
-  display: none;
+    color: #fefefe;
+    border-radius: .3rem;
+    display: none;
+}
+.results {
+  height: 52px;
+  margin-bottom: 10px;
 }
 #trapez {
   position: absolute;
@@ -156,6 +159,7 @@ body{
   position: relative;
   min-height: 100vh;
 }
+
 footer{
   position: absolute;
   bottom: 0;
